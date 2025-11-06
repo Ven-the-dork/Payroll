@@ -1,0 +1,23 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import DynamicTitle from "./DynamicTitle";
+import Dashboard from "./Dashboard";
+import EmployeeManagement from "./EmployeeManagement";
+import LeaveManagement from "./LeaveManagement";
+import LoginPage from "./Loginpage";
+
+
+function App() {
+  return (
+    <Router>
+      <DynamicTitle /> 
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/leave-management" element={<LeaveManagement />} />
+        <Route path="/employee" element={<EmployeeManagement />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
