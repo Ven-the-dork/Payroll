@@ -1,94 +1,102 @@
-// src/LoginPage.jsx
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
-  const navigate = useNavigate(); // 👈 for navigation
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("user"); // "user" or "admin"
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    console.log('Login attempted with:', { email, password, rememberMe });
 
-    
-    navigate('/dashboard');
+    console.log("Login as:", role, { email, password });
+
+    // Example: change API endpoint depending on role
+    if (role === "admin") {
+      // Perform admin login logic
+      navigate("/Dashboard");
+    } else {
+      // Perform user login logic
+      navigate("/User-side/DashboardUser");
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-600 via-green-800 to-green-600 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <div className="flex justify-center mb-4">
-            <img src="src/assets/cvsu.png" className="w-40 h-35" />
-          </div>
-          <h1 className="text-3xl font-bold text-white mb-2">
-            CvSU Payroll Management System
-          </h1>
-          <p className="text-white/90 text-lg">Login to your account.</p>
-        </div>
+    <div className="min-h-screen flex items-center justify-center bg-green-700">
+      <div className="flex w-[850px] h-[500px] bg-white rounded-2xl shadow-2xl overflow-hidden">
 
-        <div className="space-y-6">
-          {/* Email Input */}
-          <div>
-            <label htmlFor="email" className="block text-white font-semibold mb-2">
-              E-mail Address
-            </label>
+        {/* LEFT SIDE – Login Form */}
+        <div className="w-1/2 bg-white flex flex-col justify-center items-center p-8">
+          <h2 className="text-3xl font-bold text-black mb-2">
+            {role === "admin" ? "Admin Login" : "Welcome Back !!"}
+          </h2>
+          <p className="text-black mb-6">
+            {role === "admin"
+              ? "Please enter your admin credentials"
+              : "Please enter your credentials to log in"}
+          </p>
+
+          <form onSubmit={handleLogin} className="w-full max-w-xs">
             <input
-              type="email"
-              id="email"
+              type="text"
+              placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring-4 focus:ring-yellow-400 transition-all"
+              className="w-full mb-4 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
               required
             />
-          </div>
-
-          {/* Password Input */}
-          <div>
-            <label htmlFor="password" className="block text-white font-semibold mb-2">
-              Password
-            </label>
             <input
               type="password"
-              id="password"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring-4 focus:ring-yellow-400 transition-all"
+              className="w-full mb-3 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
               required
             />
-          </div>
 
-          {/* Remember Me + Reset Password */}
-          <div className="flex items-center justify-between">
-            <label className="flex items-center space-x-2 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={rememberMe}
-                onChange={(e) => setRememberMe(e.target.checked)}
-                className="w-5 h-5 rounded cursor-pointer accent-yellow-400"
-              />
-              <span className="text-white font-medium">Remember me</span>
-            </label>
+            <div className="text-right mb-4">
+              <a href="#" className="text-sm text-black hover:underline">
+                Forgot password?
+              </a>
+            </div>
+
             <button
-              onClick={(e) => {
-                e.preventDefault();
-                console.log('Reset password clicked');
-              }}
-              className="text-white font-semibold hover:underline bg-transparent border-none cursor-pointer"
+              type="submit"
+              className="w-full bg-green-700 text-black py-2 rounded-md hover:bg-yellow-500 transition"
             >
-              Reset Password?
+              SIGN IN
             </button>
-          </div>
+          </form>
+        </div>
 
-          {/* Sign In Button */}
-          <button
-            onClick={handleSubmit}
-            className="w-full bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-800 font-bold py-4 rounded-lg hover:from-yellow-300 hover:to-orange-300 transform hover:scale-105 transition-all duration-200 shadow-lg border-2 border-red-500"
-          >
-            Sign In
-          </button>
+        {/* RIGHT SIDE – Role Switcher */}
+        <div className="w-1/2 bg-green-700 text-white flex flex-col justify-center items-center p-8 rounded-l-[60px]">
+          <img src="src/assets/cvsu.png" alt="Logo" className="w-20 mb-4" />
+          <h2 className="text-3xl font-bold mb-2">CvSU Payroll</h2>
+          <p className="text-gray-500 mb-6 text-center">
+            {role === "admin"
+              ? "Want to log in as a regular user?"
+              : "Are you an admin?"}
+          </p>
+
+          <div className="flex flex-col gap-3 w-full max-w-xs">
+            {role === "admin" ? (
+              <button
+                onClick={() => setRole("user")}
+                className="w-full bg-white text-black py-2 rounded-md font-semibold hover:bg-gray-100 transition"
+              >
+                USER LOGIN
+              </button>
+            ) : (
+              <button
+                onClick={() => setRole("admin")}
+                className="w-full bg-white text-black py-2 rounded-md font-semibold hover:bg-gray-100 transition"
+              >
+                ADMIN LOGIN
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>
