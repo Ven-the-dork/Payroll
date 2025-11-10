@@ -12,20 +12,16 @@ export default function LoginPage() {
 
     console.log("Login as:", role, { email, password });
 
-    // Example: change API endpoint depending on role
     if (role === "admin") {
-      // Perform admin login logic
-      navigate("/Dashboard");
+      navigate("/dashboard");
     } else {
-      // Perform user login logic
-      navigate("/User-side/DashboardUser");
+      navigate("/dashboard_user");
     }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-green-700">
       <div className="flex w-[850px] h-[500px] bg-white rounded-2xl shadow-2xl overflow-hidden">
-
         {/* LEFT SIDE – Login Form */}
         <div className="w-1/2 bg-white flex flex-col justify-center items-center p-8">
           <h2 className="text-3xl font-bold text-black mb-2">
@@ -56,14 +52,17 @@ export default function LoginPage() {
             />
 
             <div className="text-right mb-4">
-              <a href="#" className="text-sm text-black hover:underline">
+              <a
+                href="#"
+                className="text-sm text-black hover:underline cursor-pointer"
+              >
                 Forgot password?
               </a>
             </div>
 
             <button
               type="submit"
-              className="w-full bg-green-700 text-black py-2 rounded-md hover:bg-yellow-500 transition"
+              className="w-full bg-green-700 text-black py-2 rounded-md hover:bg-yellow-500 transition cursor-pointer"
             >
               SIGN IN
             </button>
@@ -74,7 +73,7 @@ export default function LoginPage() {
         <div className="w-1/2 bg-green-700 text-white flex flex-col justify-center items-center p-8 rounded-l-[60px]">
           <img src="src/assets/cvsu.png" alt="Logo" className="w-20 mb-4" />
           <h2 className="text-3xl font-bold mb-2">CvSU Payroll</h2>
-          <p className="text-gray-500 mb-6 text-center">
+          <p className="text-white mb-6 text-center">
             {role === "admin"
               ? "Want to log in as a regular user?"
               : "Are you an admin?"}
@@ -84,14 +83,14 @@ export default function LoginPage() {
             {role === "admin" ? (
               <button
                 onClick={() => setRole("user")}
-                className="w-full bg-white text-black py-2 rounded-md font-semibold hover:bg-gray-100 transition"
+                className="w-full bg-white text-black py-2 rounded-md font-semibold hover:bg-gray-100 transition cursor-pointer"
               >
                 USER LOGIN
               </button>
             ) : (
               <button
                 onClick={() => setRole("admin")}
-                className="w-full bg-white text-black py-2 rounded-md font-semibold hover:bg-gray-100 transition"
+                className="w-full bg-white text-black py-2 rounded-md font-semibold hover:bg-gray-100 transition cursor-pointer"
               >
                 ADMIN LOGIN
               </button>

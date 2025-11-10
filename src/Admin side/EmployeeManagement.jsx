@@ -33,23 +33,23 @@ function ActionDropdown({ onViewProfile }) {
     <div className="relative inline-block text-left" ref={ref}>
       <button
         onClick={() => setOpen((s) => !s)}
-        className="flex items-center gap-2 bg-green-700 text-white px-4 py-1 rounded-md shadow hover:bg-yellow-400 transition"
+        className="flex items-center gap-2 bg-green-700 text-white cursor-pointer px-4 py-1 rounded-md shadow hover:bg-yellow-400 transition"
       >
         Actions <ChevronDown size={14} />
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-36 bg-white rounded-md shadow-lg border border-gray-200 z-40">
+        <div className="absolute right-0 mt-2 w-36 bg-white  rounded-md shadow-lg border border-gray-200 z-40">
           <button
             onClick={() => {
               setOpen(false);
               onViewProfile();
             }}
-            className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+            className="block w-full text-left px-4 py-2 text-black rounded-md cursor-pointer hover:bg-yellow-400 transition"
           >
             View Profile
           </button>
-          <button className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100">
+          <button className="block w-full text-left px-4 py-2 text-black rounded-md cursor-pointer hover:bg-yellow-400 transition">
             Edit Profile
           </button>
         </div>
@@ -57,6 +57,7 @@ function ActionDropdown({ onViewProfile }) {
     </div>
   );
 }
+
 
 export default function EmployeeManagement() {
   const navigate = useNavigate();
@@ -138,7 +139,7 @@ export default function EmployeeManagement() {
       <aside
         className={`${
           isOpen ? "w-64" : "w-20"
-        } bg-green-700 text-white rounded-lg flex flex-col justify-between py-6 transition-all duration-300 relative`}
+        } bg-green-700 text-white rounded-r-lg flex flex-col justify-between py-6 transition-all duration-300 relative`}
       >
         <div>
           <div
@@ -161,12 +162,12 @@ export default function EmployeeManagement() {
             <nav className="space-y-1">
               <button
                 onClick={() => navigate("/dashboard")}
-                className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-yellow-500 transition"
+                className="w-full flex items-center gap-3 px-3 py-2 rounded-lg  cursor-pointer hover:bg-yellow-500 transition"
               >
                 <LayoutDashboard size={18} /> {isOpen && "Dashboard"}
               </button>
 
-              <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-yellow-500 transition">
+              <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg  cursor-pointer hover:bg-yellow-500 transition">
                 <Mail size={18} /> {isOpen && "Messages"}
               </button>
             </nav>
@@ -176,18 +177,18 @@ export default function EmployeeManagement() {
             </h3>
 
             <nav className="space-y-1">
-              <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg bg-yellow-500 transition">
+              <button className="w-full flex items-center gap-3 px-3 py-2   cursor-pointer rounded-lg bg-yellow-500 transition">
                 <Users size={18} /> {isOpen && "Employee Management"}
               </button>
 
               <button
                 onClick={() => navigate("/leave-management")}
-                className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-yellow-500 transition"
+                className="w-full flex items-center gap-3 px-3 py-2 rounded-lg  cursor-pointer hover:bg-yellow-500 transition"
               >
                 <CalendarDays size={18} /> {isOpen && "Leave Management"}
               </button>
 
-              <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-yellow-500 transition">
+              <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg  cursor-pointer hover:bg-yellow-500 transition">
                 <CreditCard size={18} /> {isOpen && "Payroll Management"}
               </button>
             </nav>
@@ -197,7 +198,7 @@ export default function EmployeeManagement() {
         <div className="px-6">
           <button
             onClick={() => navigate("/")}
-            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-800 font-bold py-2 rounded-lg hover:from-yellow-300 hover:to-orange-300 transform hover:scale-105 transition-all duration-200 shadow-lg"
+            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-400  cursor-pointer to-orange-400 text-gray-800 font-bold py-2 rounded-lg hover:from-yellow-300 hover:to-orange-300 transform hover:scale-105 transition-all duration-200 shadow-lg"
           >
             <Power size={18} />
             {isOpen && "Log Out"}
@@ -209,10 +210,10 @@ export default function EmployeeManagement() {
       <main className="flex-1 p-8 overflow-x-hidden">
         {/* top bar */}
         <div className="flex items-center justify-between mb-6">
-          <button onClick={() => setIsOpen((s) => !s)} className="text-gray-700 hover:text-green-700 transition">
+          <button onClick={() => setIsOpen((s) => !s)} className="text-gray-700  cursor-pointer hover:text-green-700 transition">
             <Menu size={28} />
           </button>
-
+           
           <div className="flex-1 flex justify-center relative">
             <input
               type="text"
@@ -223,13 +224,13 @@ export default function EmployeeManagement() {
           </div>
 
           <div className="flex items-center gap-4 ml-6">
-            <button className="p-2 bg-green-700 text-white rounded-full hover:bg-yellow-400 transition">
+            <button className="p-2 bg-green-700 text-white rounded-full  cursor-pointer hover:bg-yellow-400 transition">
               <Bell size={18} />
             </button>
-            <button className="p-2 bg-green-700 text-white rounded-full hover:bg-yellow-400 transition">
+            <button className="p-2 bg-green-700 text-white rounded-full  cursor-pointer hover:bg-yellow-400 transition">
               <Settings size={18} />
             </button>
-            <button className="p-2 bg-green-700 text-white rounded-full hover:bg-yellow-400 transition">
+            <button className="p-2 bg-green-700 text-white rounded-full  cursor-pointer hover:bg-yellow-400 transition">
               <Mail size={18} />
             </button>
           </div>
@@ -293,7 +294,7 @@ export default function EmployeeManagement() {
                 <div className="flex items-center gap-3">
                   <button
                     onClick={closeProfile}
-                    className="flex items-center gap-2 px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200 transition"
+                    className="flex items-center text-white gap-2 px-3 py-1 rounded-md cursor-pointer bg-green-700 hover:bg-yellow-400 transition"
                   >
                     ← Back to Employee List
                   </button>
@@ -313,7 +314,7 @@ export default function EmployeeManagement() {
                       <button
                         key={s}
                         onClick={() => setActiveSection(s)}
-                        className={`w-full text-left px-4 py-3 rounded-xl ${activeSection === s ? "bg-yellow-500 text-black" : "bg-[#E9F1FA] text-black"} hover:opacity-90 transition`}
+                        className={`w-full text-left px-4 py-3 cursor-pointer rounded-xl ${activeSection === s ? "bg-yellow-500 text-black" : "bg-[#E9F1FA] text-black"} hover:opacity-90 transition`}
                       >
                         {s}
                       </button>

@@ -23,7 +23,7 @@ export default function Dashboard() {
       <aside
         className={`${
           isOpen ? 'w-64' : 'w-20'
-        } bg-green-700 text-white  rounded-lg flex flex-col justify-between py-6 transition-all duration-300 relative`}
+        } bg-green-700 text-white  rounded-r-lg flex flex-col justify-between py-6 transition-all duration-300 relative`}
       >
         <div>
           {/* Profile Section */}
@@ -52,14 +52,14 @@ export default function Dashboard() {
             <nav className="space-y-1">
               {/* Dashboard */}
               <div className="relative group">
-                <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg bg-yellow-500">
+                <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg  cursor-pointer bg-yellow-500">
                   <LayoutDashboard size={18} /> {isOpen && 'Dashboard'}
                 </button>
               </div>
 
               {/* Messages */}
               <div className="relative group">
-                <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-yellow-500 transition">
+                <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg  cursor-pointer hover:bg-yellow-500 transition">
                   <Mail size={18} /> {isOpen && 'Messages'}
                 </button>
               </div>
@@ -79,7 +79,7 @@ export default function Dashboard() {
               <div className="relative group">
                 <button
                   onClick={() => navigate("/employee")}
-                   className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-yellow-500 transition"
+                   className="w-full flex items-center gap-3 px-3 py-2  cursor-pointer rounded-lg hover:bg-yellow-500 transition"
                 >
                   <Users size={18} /> {isOpen && "Employee Management"}
                   </button>
@@ -90,7 +90,7 @@ export default function Dashboard() {
               <div className="relative group">
                 <button
                     onClick={() => navigate('/leave-management')}
-                    className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-yellow-500 transition "
+                    className="w-full flex items-center gap-3 px-3 py-2 rounded-lg  cursor-pointer hover:bg-yellow-500 transition "
                 >
                     <CalendarDays size={18} /> {isOpen && 'Leave Management'}
                 </button>
@@ -98,7 +98,7 @@ export default function Dashboard() {
 
               {/* Payroll Management */}
               <div className="relative group">
-                <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-yellow-500 transition">
+                <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg  cursor-pointer hover:bg-yellow-500 transition">
                   <CreditCard size={18} /> {isOpen && 'Payroll Management'}
                 </button>
               </div>
@@ -110,7 +110,7 @@ export default function Dashboard() {
         <div className="px-6">
           <button
             onClick={() => navigate('/')}
-            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-800 font-bold py-2 rounded-lg hover:from-yellow-300 hover:to-orange-300 transform hover:scale-105 transition-all duration-200 shadow-lg"
+            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-800 font-bold py-2 rounded-lg  cursor-pointer hover:from-yellow-300 hover:to-orange-300 transform hover:scale-105 transition-all duration-200 shadow-lg"
           >
             <Power size={18} />
             {isOpen && 'Log Out'}
@@ -125,7 +125,7 @@ export default function Dashboard() {
           {/* Sidebar toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-700 hover:text-green-700 transition"
+            className="text-gray-700  cursor-pointer hover:text-green-700 transition"
           >
             <Menu size={28} />
           </button>
@@ -145,13 +145,13 @@ export default function Dashboard() {
 
           {/* Right-side icons */}
           <div className="flex items-center gap-4 ml-6">
-            <button className="p-2 bg-green-700  text-white rounded-full hover:bg-yellow-400 transition">
+            <button className="p-2 bg-green-700  text-white rounded-full  cursor-pointer hover:bg-yellow-400 transition">
               <Bell size={18} />
             </button>
-            <button className="p-2 bg-green-700  text-white rounded-full hover:bg-yellow-400 transition">
+            <button className="p-2 bg-green-700  text-white rounded-full cursor-pointer hover:bg-yellow-400 transition">
               <Settings size={18} />
             </button>
-            <button className="p-2 bg-green-700  text-white rounded-full hover:bg-yellow-400 transition">
+            <button className="p-2 bg-green-700  text-white rounded-full  cursor-pointer hover:bg-yellow-400 transition">
               <Mail size={18} />
             </button>
           </div>

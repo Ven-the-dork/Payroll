@@ -82,7 +82,7 @@ export default function LeaveManagement() {
       <aside
         className={`${
           isOpen ? 'w-64' : 'w-20'
-        } bg-green-700 text-white rounded-lg flex flex-col justify-between py-6 transition-all duration-300 relative`}
+        } bg-green-700 text-white rounded-r-lg flex flex-col  justify-between py-6 transition-all duration-300 relative`}
       >
         <div>
           {/* Profile Section */}
@@ -111,12 +111,12 @@ export default function LeaveManagement() {
             <nav className="space-y-1">
               <button
                 onClick={() => navigate('/dashboard')}
-                className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-yellow-500 transition"
+                className="w-full flex items-center gap-3 px-3 py-2 cursor-pointer rounded-lg hover:bg-yellow-500 transition"
               >
                 <LayoutDashboard size={18} /> {isOpen && 'Dashboard'}
               </button>
 
-              <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-yellow-500 transition">
+              <button className="w-full flex items-center gap-3 px-3 cursor-pointer py-2 rounded-lg hover:bg-yellow-500 transition">
                 <Mail size={18} /> {isOpen && 'Messages'}
               </button>
             </nav>
@@ -133,16 +133,16 @@ export default function LeaveManagement() {
             <nav className="space-y-1">
               <button
                 onClick={() => navigate("/employee")}
-                  className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-yellow-500 transition"
+                  className="w-full flex items-center gap-3 px-3 cursor-pointer py-2 rounded-lg hover:bg-yellow-500 transition"
               >
                  <Users size={18} /> {isOpen && "Employee Management"}
               </button>
 
-              <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg bg-yellow-500 transition">
+              <button className="w-full flex items-center gap-3 cursor-pointer px-3 py-2 rounded-lg bg-yellow-500 transition">
                 <CalendarDays size={18} /> {isOpen && 'Leave Management'}
               </button>
 
-              <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-yellow-500 transition">
+              <button className="w-full flex items-center gap-3 cursor-pointer px-3 py-2 rounded-lg hover:bg-yellow-500 transition">
                 <CreditCard size={18} /> {isOpen && 'Payroll Management'}
               </button>
             </nav>
@@ -153,7 +153,7 @@ export default function LeaveManagement() {
         <div className="px-6">
           <button
             onClick={() => navigate('/')}
-            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-800 font-bold py-2 rounded-lg hover:from-yellow-300 hover:to-orange-300 transform hover:scale-105 transition-all duration-200 shadow-lg"
+            className="w-full flex items-center justify-center gap-2 cursor-pointer bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-800 font-bold py-2 rounded-lg hover:from-yellow-300 hover:to-orange-300 transform hover:scale-105 transition-all duration-200 shadow-lg"
           >
             <Power size={18} />
             {isOpen && 'Log Out'}
@@ -167,7 +167,7 @@ export default function LeaveManagement() {
         <div className="flex items-center justify-between mb-8">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-700 hover:text-green-700 transition"
+            className="text-gray-700 cursor-pointer hover:text-green-700 transition"
           >
             <Menu size={28} />
           </button>
@@ -187,13 +187,13 @@ export default function LeaveManagement() {
 
           {/* Right-side icons */}
           <div className="flex items-center gap-4 ml-6">
-            <button className="p-2 bg-green-700 text-white rounded-full hover:bg-yellow-400 transition">
+            <button className="p-2 bg-green-700 text-white cursor-pointer rounded-full hover:bg-yellow-400 transition">
               <Bell size={18} />
             </button>
-            <button className="p-2 bg-green-700 text-white rounded-full hover:bg-yellow-400 transition">
+            <button className="p-2 bg-green-700 text-white cursor-pointer rounded-full hover:bg-yellow-400 transition">
               <Settings size={18} />
             </button>
-            <button className="p-2 bg-green-700 text-white rounded-full hover:bg-yellow-400 transition">
+            <button className="p-2 bg-green-700 text-white cursor-pointer rounded-full hover:bg-yellow-400 transition">
               <Mail size={18} />
             </button>
           </div>
@@ -206,7 +206,7 @@ export default function LeaveManagement() {
         <div className="flex justify-center gap-8 mb-6">
           <button
             onClick={() => toggleTab('settings')}
-            className={`px-30 py-3 rounded-lg shadow-md transition ${
+            className={`px-30 py-3 rounded-lg cursor-pointer shadow-md transition ${
               activeTab === 'settings'
                 ? 'bg-yellow-500 text-white'
                 : 'bg-green-700 text-white hover:bg-yellow-500'
@@ -217,7 +217,7 @@ export default function LeaveManagement() {
 
           <button
             onClick={() => toggleTab('recall')}
-            className={`px-30 py-3 rounded-lg shadow-md transition ${
+            className={`px-30 py-3 rounded-lg cursor-pointer shadow-md transition ${
               activeTab === 'recall'
                 ? 'bg-yellow-500 text-white'
                 : 'bg-green-700 text-white hover:bg-yellow-500'
@@ -228,7 +228,7 @@ export default function LeaveManagement() {
 
           <button
             onClick={() => toggleTab('history')}
-            className={`px-30 py-3 rounded-lg shadow-md transition ${
+            className={`px-30 py-3 rounded-lg cursor-pointer shadow-md transition ${
               activeTab === 'history'
                 ? 'bg-yellow-500 text-white'
                 : 'bg-green-700 text-white hover:bg-yellow-500'
@@ -252,14 +252,14 @@ export default function LeaveManagement() {
                     <input type="text" placeholder="Maternity" className="w-full p-2 bg-gray-100 rounded-md border border-gray-300" />
                   </div>
                   <div>
-                    <label className="text-sm text-gray-700">Duration (days)</label>
-                    <input type="number" placeholder="60" className="w-full p-2 bg-gray-100 rounded-md border border-gray-300" />
+                    <label className="text-sm  text-gray-700">Duration (days)</label>
+                    <input type="number" placeholder="60" className="w-full p-2 bg-gray-100  rounded-md border border-gray-300" />
                   </div>
                 </div>
 
                 <div>
                   <label className="text-sm text-gray-700">Do you want to activate Leave Recall for this plan?</label>
-                  <select className="w-full p-2 bg-gray-100 rounded-md border border-gray-300">
+                  <select className="w-full p-2 bg-gray-100 rounded-md cursor-pointer border border-gray-300">
                     <option>Select option from dropdown</option>
                     <option>Yes</option>
                     <option>No</option>
@@ -269,7 +269,7 @@ export default function LeaveManagement() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm text-gray-700">Would you like to activate leave bonus?</label>
-                    <select className="w-full p-2 bg-gray-100 rounded-md border border-gray-300">
+                    <select className="w-full p-2 bg-gray-100 cursor-pointer rounded-md border border-gray-300">
                       <option>Select option from dropdown</option>
                       <option>Yes</option>
                       <option>No</option>
@@ -283,7 +283,7 @@ export default function LeaveManagement() {
                  
                 <div>
                   <label className="text-sm text-gray-700">Select Leave Allocation</label>
-                  <select className="w-full p-2 bg-gray-100 rounded-md border border-gray-300">
+                  <select className="w-full p-2 bg-gray-100  cursor-pointer rounded-md border border-gray-300">
                     <option>Senior Level</option>
                     <option>Junior Level</option>
                   </select>
@@ -293,7 +293,7 @@ export default function LeaveManagement() {
                   <textarea className="w-full p-2 bg-gray-100 rounded-md border border-gray-300" rows="2"></textarea>
                 </div>
 
-                <button type="button" className="w-full bg-red-700 text-white py-2 rounded-md hover:bg-yellow-600">
+                <button type="button" className="w-full bg-red-700 text-white cursor-pointer py-2 rounded-md hover:bg-yellow-600">
                   Create
                 </button>
               </form>
@@ -323,13 +323,13 @@ export default function LeaveManagement() {
                         <td className="relative  p-3">
                           <button 
                              onClick={() => toggleDropdown(index)}
-                             className="bg-green-700 text-white px-4 py-1 rounded-md flex items-center gap-1 hover:bg-yellow-500"
+                             className="bg-green-700 text-white px-4 py-1 rounded-md cursor-pointer flex items-center gap-1 hover:bg-yellow-500"
                              >Actions<ChevronDown size={16} />
                           </button>
                            {openDropdown === index &&(
                              <div className="absolute z-50 mt-2 w-28 bg-yellow-500 border border-gray-300 rounded-md shadow-lg">
-                                <button className="block w-full text-left px-3 py-2 hover:bg-gray-100 text-sm">Edit</button>
-                                <button className="block w-full text-left px-3 py-2 hover:bg-gray-100 text-sm text-red-600">Delete</button>
+                                <button className="block w-full text-left px-3 py-2 cursor-pointer hover:bg-gray-100 text-sm">Edit</button>
+                                <button className="block w-full text-left px-3 py-2 cursor-pointer hover:bg-gray-100 text-sm text-red-600">Delete</button>
                              </div>
                            )}
                         </td>
@@ -376,7 +376,7 @@ export default function LeaveManagement() {
                       <td className="p-3">
                         <button
                           onClick={() => handleRecallClick(leave)}
-                          className="bg-green-700 text-white px-4 py-1 rounded hover:bg-yellow-500"
+                          className="bg-green-700 text-white cursor-pointer px-4 py-1 rounded hover:bg-yellow-500"
                         >
                           Recall
                         </button>
@@ -433,7 +433,7 @@ export default function LeaveManagement() {
                         <input
                           type="date"
                           value="2022-04-22"
-                          className="w-full bg-gray-100 border border-gray-300 rounded-md p-2"
+                          className="w-full bg-gray-100 border cursor-pointer border-gray-300 rounded-md p-2"
                         />
                       </div>
                       <div className="flex-1">
@@ -441,7 +441,7 @@ export default function LeaveManagement() {
                         <input
                           type="date"
                           value="2022-04-28"
-                          className="w-full bg-gray-100 border border-gray-300 rounded-md p-2"
+                          className="w-full bg-gray-100 border cursor-pointer border-gray-300 rounded-md p-2"
                         />
                       </div>
                     </div>
@@ -451,11 +451,11 @@ export default function LeaveManagement() {
                         <input
                           type="number"
                           placeholder="0"
-                          className="w-full bg-gray-100 border border-gray-300 rounded-md p-2"
+                          className="w-full bg-gray-100 border cursor-pointer border-gray-300 rounded-md p-2"
                         />
                       </div>
                       <div className="flex-1">
-                        <label className="block text-gray-700 text-sm mb-1">New Resumption Date</label>
+                        <label className="block text-gray-700  text-sm mb-1">New Resumption Date</label>
                         <input
                           type="date"
                           className="w-full bg-gray-100 border border-gray-300 rounded-md p-2"
@@ -466,14 +466,14 @@ export default function LeaveManagement() {
                     <div className="flex justify-between mt-4">
                       <button
                         type="button"
-                        className="bg-red-600 text-white px-5 py-2 rounded-md hover:bg-gray-800"
+                        className="bg-red-600 text-white px-5 cursor-pointer py-2 rounded-md hover:bg-gray-800"
                       >
                         Initiate Recall
                       </button>
                       <button
                         type="button"
                         onClick={closePopup}
-                        className="border border-black px-5 py-2 rounded-md hover:bg-gray-100"
+                        className="border border-black px-5 py-2 cursor-pointer rounded-md hover:bg-gray-100"
                       >
                         Cancel
                       </button>
@@ -514,14 +514,14 @@ export default function LeaveManagement() {
                               <td className="relative p-3">
                                 <button
                                      onClick={() => toggleHistoryDropdown(index)}
-                                    className="bg-green-700 text-white px-4 py-1 rounded-md flex items-center gap-1 hover:bg-yellow-500"
+                                    className="bg-green-700 text-white px-4 py-1 rounded-md cursor-pointer flex items-center gap-1 hover:bg-yellow-500"
                                     >
                                          Actions <ChevronDown size={16} />
                                 </button>
                                 {openHistoryDropdown === index && (
                                     <div className="absolute z-50 mt-2 w-28 bg-yellow-500 border border-gray-300 rounded-md shadow-lg">
-                                        <button className="block w-full text-left px-3 py-2 hover:bg-gray-100 text-sm">Approve</button>
-                                        <button className="block w-full text-left px-3 py-2 hover:bg-gray-100 text-sm text-red-600">Decline</button>
+                                        <button className="block w-full text-left px-3 py-2 cursor-pointer hover:bg-gray-100 text-sm">Approve</button>
+                                        <button className="block w-full text-left px-3 py-2 cursor-pointer hover:bg-gray-100 text-sm text-red-600">Decline</button>
                                     </div>
                             )}
                             </td>

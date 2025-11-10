@@ -4,7 +4,8 @@ import Dashboard from "./Dashboard";
 import EmployeeManagement from "./EmployeeManagement";
 import LeaveManagement from "./LeaveManagement";
 import LoginPage from "./Loginpage";
-import DashboardUser from "./User-side/DashboardUser";
+import DashboardUser from "../User-side/DashboardUser";
+
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/leave-management" element={<LeaveManagement />} />
         <Route path="/employee" element={<EmployeeManagement />} />
-        <Route path="/dashboard-user" element={<DashboardUser />} />
+        <Route path="/dashboard_user" element={<DashboardUser/>} />
       </Routes>
     </Router>
   );
